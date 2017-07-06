@@ -1,0 +1,72 @@
+algorithms : {
+	GRADIENT_BOOSTING : 0,
+	DEEP_LEARNING : 1,
+	LINEAR_REGRESSION : 2,
+	RANDOM_FOREST : 3
+}
+
+model : {
+	id : -1,
+	algorithm : algorithms.GRADIENT_BOOSTING,
+	file : {
+		basePath : '',
+		path : this.model.file.basePath + "/" + this.model.id.toString() + ".pkl"
+	}
+	parameters : {}
+}
+training : {
+	id : -1,
+	file : {
+		basePath : '',
+		name : '',
+		path : this.basePath + "/" + this.name
+		type : 'csv'
+	},
+	output : {
+		name : '',
+		index : -1
+	},
+	essentialFeatures : [{
+		name : '',
+		index : -1
+	}],
+	ignoredFeatures : [{
+		name : '',
+		index : -1
+	}],
+	weights : {
+		name :'weights'
+		index :'-1'
+		values : []
+	}
+	xTrain : [[]],
+	yTrain : []
+}
+prediction : {
+	id : -1,
+	file : {
+		basePath : '',
+		name : '',
+		path : this.basePath + "/" + this.name
+		type : 'csv'
+	},
+	model : {
+		id : -1,
+		basePath : '',
+		path : this.model.id + "/" + this.model.path
+	},
+	output : {
+		name : '',
+		index : -1
+	},
+	essentialFeatures : [{
+		name : '',
+		index : -1
+	}],
+	ignoredFeatures : [{
+		name : '',
+		index : -1
+	}],
+	xTest : [[]]
+	yTest : []
+}
